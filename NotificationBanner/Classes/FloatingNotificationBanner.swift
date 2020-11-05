@@ -76,7 +76,7 @@ open class FloatingNotificationBanner: GrowingNotificationBanner {
         spacerView.backgroundColor = customView.backgroundColor
     }
     
-    public convenience init(attributedTitle: NSAttributedString,
+    public convenience init(attributedTitle: NSAttributedString? = nil,
                             attributedSubtitle: NSAttributedString? = nil,
                             leftView: UIView? = nil,
                             rightView: UIView? = nil,
