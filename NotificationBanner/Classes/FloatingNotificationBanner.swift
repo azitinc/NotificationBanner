@@ -76,6 +76,18 @@ open class FloatingNotificationBanner: GrowingNotificationBanner {
         spacerView.backgroundColor = customView.backgroundColor
     }
     
+    public convenience init(attributedTitle: NSAttributedString,
+                            attributedSubtitle: NSAttributedString? = nil,
+                            leftView: UIView? = nil,
+                            rightView: UIView? = nil,
+                            style: BannerStyle = .info,
+                            colors: BannerColorsProtocol? = nil) {
+        let subtitle: String? = (attributedSubtitle != nil) ? "" : nil
+        self.init(title: "", subtitle: subtitle, leftView: leftView, rightView: rightView, style: style, colors: colors)
+        titleLabel!.attributedText = attributedTitle
+        subtitleLabel?.attributedText = attributedSubtitle
+    }
+    
     /**
      Convenience function to display banner with non .zero default edge insets
      */
